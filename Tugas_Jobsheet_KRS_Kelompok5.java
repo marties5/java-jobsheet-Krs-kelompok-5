@@ -1,9 +1,8 @@
 import java.util.Scanner;
 
 public class Tugas_Jobsheet_KRS_Kelompok5 {
-    
 
-    //Function yang digunakan untuk tambah KRS
+    // Function yang digunakan untuk tambah KRS
     public static void tambahDataKRS(String[][] krsArray, int[] index) {
         Scanner input = new Scanner(System.in);
 
@@ -42,9 +41,10 @@ public class Tugas_Jobsheet_KRS_Kelompok5 {
             index[0]++;
             System.out.println("Data KRS berhasil ditambahkan.");
         }
+        input.close();
+
     }
 
-    
     public static int hitungTotalSKS(String[][] krsArray, int index, String NIM) {
         int total = 0;
         for (int i = 0; i < index; i++) {
@@ -55,7 +55,6 @@ public class Tugas_Jobsheet_KRS_Kelompok5 {
         return total;
     }
 
-    
     public static void tampilkanKRS(String[][] krsArray, int index, String NIM) {
         int totalSKS = 0;
         System.out.println("Daftar KRS Mahasiswa dengan NIM: " + NIM);
@@ -68,7 +67,6 @@ public class Tugas_Jobsheet_KRS_Kelompok5 {
         System.out.println("Total SKS: " + totalSKS);
     }
 
-    
     public static void analisisMahasiswa(String[][] krsArray, int index) {
         int count = 0;
         for (int i = 0; i < index; i++) {
@@ -90,10 +88,9 @@ public class Tugas_Jobsheet_KRS_Kelompok5 {
         System.out.println("Jumlah mahasiswa dengan SKS kurang dari 20: " + count);
     }
 
-    
     public static void tampilkanMenu() {
         String[][] krsArray = new String[100][5];
-        int[] index = { 0 }; 
+        int[] index = { 0 };
 
         Scanner input = new Scanner(System.in);
 
@@ -106,7 +103,7 @@ public class Tugas_Jobsheet_KRS_Kelompok5 {
             System.out.print("Pilih menu (1-4): ");
 
             int pilihan = input.nextInt();
-            input.nextLine(); 
+            input.nextLine();
 
             switch (pilihan) {
                 case 1:
@@ -126,7 +123,10 @@ public class Tugas_Jobsheet_KRS_Kelompok5 {
                 default:
                     System.out.println("Pilihan tidak valid.");
             }
+            input.close();
+
         }
+
     }
 
     public static void main(String[] args) {
